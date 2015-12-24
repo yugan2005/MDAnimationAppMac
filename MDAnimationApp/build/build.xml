@@ -23,7 +23,7 @@
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="/Users/XZH/Documents/workspace/MDAnimationApp">
+			<fileset dir="/Users/XZH/git/MDAnimationAppMac/MDAnimationApp">
 				<include name="src/**" />
 			</fileset>
 		</copy>
