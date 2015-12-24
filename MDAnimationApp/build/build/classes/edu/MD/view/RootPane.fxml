@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane fx:id="rootPane" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.MD.view.RootPaneView">
+   <items>
+      <AnchorPane fx:id="simulationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="800.0">
+         <children>
+            <ButtonBar fx:id="buttonBar" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <buttons>
+                  <Button fx:id="startButton" mnemonicParsing="false" text="Start" />
+                  <Button fx:id="pauseButton" mnemonicParsing="false" text="Pause" />
+                  <Button fx:id="densityButton" mnemonicParsing="false" text="DensityProfile" />
+                  <Button fx:id="kineticEnergyButton" mnemonicParsing="false" text="KineticEnergy" />
+                  <Button fx:id="settingButton" mnemonicParsing="false" text="MDSetting" />
+                  <Button fx:id="defaulViewButton" mnemonicParsing="false" text="DefaultView" />
+                  <Button fx:id="velocityRescaleButton" disable="true" mnemonicParsing="false" text="VelocityRescale" />
+               </buttons>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="chartPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="800.0">
+         <children>
+            <HBox fx:id="statusBox" alignment="CENTER" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="800.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="225.0">
+               <children>
+                  <Label fx:id="totalNumberLabel" text="Total#" />
+                  <Label fx:id="TimeStepSizeLabel" text="TimeStepSize" />
+                  <Label fx:id="initialTempLabel" text="InitialTemp" />
+                  <Label fx:id="currentTempLabel" text="CurrentTemp" />
+                  <Label fx:id="currentStepLabel" text="CurrentStep#" />
+               </children></HBox>
+         </children></AnchorPane>
+   </items>
+</SplitPane>

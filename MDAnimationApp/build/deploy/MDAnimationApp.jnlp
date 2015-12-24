@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MDAnimationApp.jnlp">
+  <information>
+    <title>MDAnimationApp</title>
+    <vendor>Yu Gan</vendor>
+    <description>MDAnimationApp</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MDAnimationApp.jar" size="110208" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="edu.MD.control.MainApp"  name="MDAnimationApp" />
+  <update check="background"/>
+</jnlp>
