@@ -189,7 +189,7 @@ public class ArgonMDSimualtion implements MDSimulation {
 
 	@Override
 	public void velocityControl() {
-		velocities = VelocityStandardizor.calculate(velocities, name, temperature);
+		velocities = VelocityStandardizor.rescale(velocities, name, temperature);
 	}
 
 }

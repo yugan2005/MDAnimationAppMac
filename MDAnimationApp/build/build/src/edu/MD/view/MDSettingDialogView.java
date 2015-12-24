@@ -72,7 +72,7 @@ public class MDSettingDialogView {
 		vaporThicknessInput = Integer.parseInt(vaporThickessField.getText());
 		nDensityBinInput = Integer.parseInt(nDensityBinField.getText());
 		initialTemperatureInput = Double.parseDouble(initialTemperatureField.getText());
-		timeStepSizeInput = Integer.parseInt(timeStepSizeField.getText()) * 1e-15;
+		timeStepSizeInput = Double.parseDouble(timeStepSizeField.getText()) * 1e-15;
 		cutOffInput = Double.parseDouble(cutoffField.getText());
 		if (isInputValid()) {
 			configuration.setFilmSize(filmSizeInput);
@@ -105,19 +105,25 @@ public class MDSettingDialogView {
 		minTemperature = mainApp.getMinTemperature();
 		StringBuilder errorMessage = new StringBuilder();
 
-		if (filmSizeInput <= 0)
-			errorMessage.append("filmSize must be positive. \n");
+		if (initialTemperatureInput < 90) {
+			if (filmSizeInput <= 3)
+					errorMessage.append("filmSize must be greater than 3. \n");
+		}
+		else {
+			if (filmSizeInput <= 2)
+				errorMessage.append("filmSize must be greater than 2. \n");
+		}
 		if (filmSizeInput > 6)
 			errorMessage.append("filmSize too large for the live animation application. \n");
-		if (filmThicknessInput <= 0)
-			errorMessage.append("filmThickness must be positive. \n");
+		if (filmThicknessInput <= 1)
+			errorMessage.append("filmThickness must be greater than 1. \n");
 		if (filmThicknessInput > 8)
 			errorMessage.append("filmThickness too large for the live animation application. \n");
 		if (initialTemperatureInput > maxTemperature)
 			errorMessage.append("Temperature is greater than critical point. \n");
 		if (initialTemperatureInput < minTemperature)
 			errorMessage.append("Temperature is lower than triple point. \n");
-		if (timeStepSizeInput < 10e-15)
+		if (timeStepSizeInput < 5e-15)
 			errorMessage.append("Time step is too small to see the animation. \n");
 
 		if (errorMessage.length() == 0)

@@ -34,7 +34,7 @@ public class MonatomicVelocityInitializer {
 		
 		// due to the statistical distribution, this need be rescaled to really match the temperature specified.
 		// Also need zero the bulk movement
-		velocities = VelocityStandardizor.calculate(velocities, name, temperature);
+		velocities = VelocityStandardizor.standarize(velocities, name, temperature);
 	}
 	
 	public List<MDVector> getVelocities(){

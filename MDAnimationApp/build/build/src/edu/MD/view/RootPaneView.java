@@ -260,10 +260,10 @@ public class RootPaneView {
 	}
 
 	private void setupStatusLabel() {
-		totalNumberLabel.setText("Tot#Particle: " + numOfParticles + ";");
-		initialTempLabel.setText(String.format("Inital Temperature: %.2f K", controller.getConfiguration().getTemperature()));
+		totalNumberLabel.setText("Tot# Particle: " + numOfParticles + ";");
+		initialTempLabel.setText(String.format("InitalTemp: %.2f K", controller.getConfiguration().getTemperature()));
 		TimeStepSizeLabel.setText(
-				String.format("TimeStep: %d e-15Sec;", Math.round(controller.getTimeStepSize() * 1e15)));
+				String.format("TimeStep: %d e-15 sec;", Math.round(controller.getTimeStepSize() * 1e15)));
 		StringBinding currentStepBinding = new StringBinding() {
 
 			{
@@ -272,7 +272,7 @@ public class RootPaneView {
 
 			@Override
 			protected String computeValue() {
-				return "CurrentStep#: " + currentStep.get() + ";";
+				return "Step#: " + currentStep.get() + ";";
 			}
 		};
 		currentStepLabel.textProperty().bind(currentStepBinding);
